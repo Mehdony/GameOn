@@ -29,5 +29,5 @@ function closemodal() {
   // Close modal form 
 closeBtn.addEventListener("click", closemodal); 
   
-  
+
   
