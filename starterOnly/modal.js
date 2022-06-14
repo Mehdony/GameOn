@@ -30,34 +30,57 @@ function closemodal() {
 }
 closeBtn.addEventListener("click", closemodal);
 
-
-
 //verification des datas radio
 const isChecked = (location) => {
   for (i = 0; i < location.length; i++) {
     if (location[i].checked === true) {
       console.log(true);
-      return true
+      return true;
     }
     return false;
   }
-}
-// récupération du nom 
+};
+
+// récupération du nom
 const isNameValid = (name) => {
   if (name.length > 2) {
-      return true
-    }
-    return false;
+    return true;
   }
+  return false;
+};
 
+// récupération du mail
+const isEmailValid = (email) => {
+  // verify if email is valid with regex text
+  const regex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (regex.test(email)) {
+    return true;
+  }
+  return false;
+};
 
+// Conditions Générales
+const isCGUCheked = (cgu) => {
+  if (cgu.checked === true) {
+    return true;
+  }
+  return false;
+};
 
 // récupération des données du formulaire
 btnSub.addEventListener("click", (e) => {
   e.preventDefault();
-  let location = document.querySelectorAll("input[name = 'location']");
-})
+  const firstName = document.getElementById("first").value;
+    isNameValid(firstName);
+  const lastName = document.getElementById("last").value;
+    isNameValid(lastName);
+  const email = document.getElementById("email").value;
+    isEmailValid(email);
+  const location = document.querySelectorAll("input[name = 'location']");
+    isChecked(location);
+  const cgu = document.getElementById("checkbox1");
+    isCGUCheked(cgu);
+});
 
-// stockage des saisies dans le LS
-// localStorage.setitem("first", document.querySelector("#first").value);
-// console.log(document.querySelector("#first").value);
+
