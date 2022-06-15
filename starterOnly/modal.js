@@ -13,7 +13,6 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelector(".close");
 const btnSub = document.querySelector(".btn-submit");
-console.log(btnSub);
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -30,7 +29,7 @@ function closemodal() {
 }
 closeBtn.addEventListener("click", closemodal);
 
-//verification des datas radio
+//vérification des datas radio
 const isChecked = (location) => {
   for (i = 0; i < location.length; i++) {
     if (location[i].checked === true) {
@@ -51,6 +50,7 @@ const isNameValid = (name) => {
 
 // récupération du mail
 const isEmailValid = (email) => {
+
   // verify if email is valid with regex text
   const regex =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -72,15 +72,30 @@ const isCGUCheked = (cgu) => {
 btnSub.addEventListener("click", (e) => {
   e.preventDefault();
   const firstName = document.getElementById("first").value;
-    isNameValid(firstName);
+  isNameValid(firstName);
   const lastName = document.getElementById("last").value;
-    isNameValid(lastName);
+  isNameValid(lastName);
   const email = document.getElementById("email").value;
-    isEmailValid(email);
+  isEmailValid(email);
   const location = document.querySelectorAll("input[name = 'location']");
-    isChecked(location);
+  isChecked(location);
   const cgu = document.getElementById("checkbox1");
-    isCGUCheked(cgu);
+  isCGUCheked(cgu);
 });
 
-
+// Valaditation du formulaire
+function ValidateForm() {
+  if (
+    isNameValid(firstName) &&
+    isNameValid(lastName) &&
+    isEmailValid(email) &&
+    isChecked(location) &&
+    isCGUCheked(cgu)) 
+    {
+      return true;
+    }
+    return false;
+  }
+  console.log(ValidateForm);
+  
+  
