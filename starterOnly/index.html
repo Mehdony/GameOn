@@ -107,8 +107,8 @@
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               </div>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
                 class="formData">
                 <input
@@ -199,13 +199,21 @@
                 </label>
                 <br>
               </div>
+              <div class="success">
+                <h2>Merci pour votre inscription</h2>
+              </div>
               <input
-                class="btn-submit button "
+                class="btn-submit button sendForm "
                 type="submit"
                 value="C'est parti"
               />
+              <input
+                class="btn-submit button closeForm" 
+                type="submit"
+                value="Fermer"
+                name="closeForm"
+                />
             </form>
-            <div class="ty-container"></div>
           </div>
         </div>
       </div>

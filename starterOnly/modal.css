@@ -68,6 +68,18 @@ img {
   display: none;
 }
 
+.closeForm{
+  display: none !important;
+}
+
+.success{
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+  width: 100%;
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
