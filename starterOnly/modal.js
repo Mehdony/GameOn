@@ -133,7 +133,6 @@ const ValidateForm = (e) => {
       return false;
     }
   }
-  console.log(ValidateForm);
 
   // récupération des données du formulaire
   btnSub.addEventListener("click", (e) => ValidateForm(e));
