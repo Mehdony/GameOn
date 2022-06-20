@@ -25,7 +25,7 @@ function launchModal() {
 
 // -----------Fonctions de vérification du formulaire
 
-// Close modal form
+// Fermeture modal form
 
 function closemodal() {
   modalbg.style.display = "none";
@@ -44,7 +44,7 @@ const isNameValid = (name) => {
 // Vérification du mail
 const isEmailValid = (email) => {
 
-  // verify if email is valid with regex text
+  // Verifie si l'email est valide
   const regex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (regex.test(email)) {
@@ -53,7 +53,7 @@ const isEmailValid = (email) => {
   return false;
 };
 
-//vérification des datas radio
+// Vérification des datas radio
 const isChecked = (radio) => {
   for (let el of radio) {
     if (el.checked) {
@@ -71,7 +71,7 @@ const isCGUCheked = (cgu) => {
   return false;
 };
 
-// display error message
+// Affichage des messages d'erreurs
 const displayError = (condition, el, err ) => {
   if (condition) {
     el.closest('.formData').dataset.error ="";
@@ -82,7 +82,6 @@ const displayError = (condition, el, err ) => {
   el.closest('.formData').dataset.errorVisible = true;
   return false;
 }
-
 const error = document.querySelectorAll(".formData[data-error]::after")
 const errorVisible = document.querySelectorAll(".formData[data-error-visible='true']::after")
 
@@ -134,7 +133,7 @@ const ValidateForm = (e) => {
     }
   }
 
-  // récupération des données du formulaire
+  // Récupération des données du formulaire
   btnSub.addEventListener("click", (e) => ValidateForm(e));
 
   
