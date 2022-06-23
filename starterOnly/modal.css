@@ -511,6 +511,10 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .topnav {
+    overflow: visible;
+  }
+
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -543,24 +547,27 @@ footer {
   }
 } 
 @media screen and (max-width: 390px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-  .topnav a.icon {
-    color: #ff0000 ;
-    float: right;
-    display: block;
-  }
-  .topnav {
-    padding-top: 10px;
-    /* overflow: hidden;  */
+  .topnav.responsive {
+    padding-top: 25px;
     margin: 3.5%;
-  }
+  } 
+  .topnav.responsive a.icon {
+    margin-top: 0;
+  } 
+  .topnav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } 
   img {
     width: 120px;
     padding-right: 1rem;
   }
- 
+  .main-navbar {
+    /* float: right; */
+    margin-top: 15px;
+    /* overflow: hidden; */
+}
   .bground {
     display: none;
     position: fixed;
