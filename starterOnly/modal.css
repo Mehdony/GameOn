@@ -54,7 +54,7 @@ img {
 
 .topnav a:hover {
   background-color: #ff0000;
-  color: #ffffff;
+  color: #ffffff !important;
   border-radius: 15px;
   text-decoration: underline;
 }
@@ -465,6 +465,61 @@ footer {
   margin: 0 20px;
 }
 
+/* @media screen and (max-width: 1004px) {
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .hero-section {
+    display: block;
+    box-shadow: unset;
+  }
+  .hero-content {
+    background: #fff;
+    color: #000;
+    padding: 0%;
+  }
+  .hero-content::after {
+    content: unset;
+  }
+  .hero-content .btn-signup {
+    display: none;
+  }
+  .hero-headline {
+    font-weight: bold;
+    font-size:2.5rem;
+    white-space: normal;
+  }
+  .hero-text {
+    display: flex;
+    flex-wrap: wrap;  
+    padding: 0;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 13px;
+  }
+  .hero-img img {
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  .hero-section > .btn-signup {
+    display: block;
+    margin: 32px auto 10px;
+    padding: 12px 35px;
+  }
+  .copyrights {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
 @media screen and (max-width: 800px) {
 
   .hero-section {
@@ -545,10 +600,140 @@ footer {
     display: block;
     margin-top: -15px;
   }
+}  */
+
+/* Responsive topNav */
+@media screen and (max-width: 1000px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    color: red;
+    margin-top: 0;
+    outline: none;
+  }
+  
+  .main-navbar {float: right;}
+}
+
+@media screen and (max-width: 1000px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    margin-top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    position: relative;
+    top: -5px;
+    right: 45px;
+  }
+}
+
+ @media screen and (max-width: 580px) {
+  .topnav a {display: none;}
+  .topnav {margin-top: 5px ;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: 0px;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    position: relative;
+    top: 45px;
+    right: -20px;
+  }
+  .header-logo img {
+    width: 150px;
+    height: auto;
+    margin-top: 15px;
+  }
 } 
+
+
+/* Responsive Hero content */
+@media screen and (max-width: 1000px) {
+  .hero-section {
+    height: 100%;
+    display: block;
+    box-shadow: unset;
+  }
+  .hero-content {
+    width: 100%;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    min-width: 100%;
+  }
+  .hero-content::after {
+    content: unset;
+  }
+  .hero-content .btn-signup {
+    display: none;
+  }
+  .hero-headline {
+    font-size: 4rem;
+    white-space: normal;
+    
+  }
+  .hero-text {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+  .hero-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+  .hero-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  .hero-section > .btn-signup {
+    display: block;
+    margin: 32px auto 10px;
+    padding: 12px 35px;
+  }
+  .copyrights {
+    margin-top: 25px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .hero-content {
+    background: #fff;
+    color: #000;
+    padding: 0px;
+  }
+  .hero-headline {
+    font-size: 3rem;
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hero-headline {
+    font-size: 2rem;
+    white-space: normal;
+  }
+}
+
+
 @media screen and (max-width: 390px) {
+  
   .topnav.responsive {
     padding-top: 25px;
+    padding-bottom: 55px;
     margin: 3.5%;
   } 
   .topnav.responsive a.icon {
@@ -564,9 +749,7 @@ footer {
     padding-right: 1rem;
   }
   .main-navbar {
-    /* float: right; */
     margin-top: 15px;
-    /* overflow: hidden; */
 }
   .bground {
     display: none;
@@ -581,7 +764,6 @@ footer {
     overflow: auto;
     background-color: rgba(255, 251, 251, 0.1);
   }
-  
   
 }
 
