@@ -33,7 +33,8 @@ closeBtn.addEventListener("click", closemodal);
 
 // Vérification  du nom et du prénom
 const isNameValid = (name) => {
-  if (name.length >= 2) {
+  const regex = /^[a-zA-Z]+[-]{0,1}[\s]{0,1}[a-zA-Z]+$/;
+  if (name.length >= 2 && regex.test(name)) {
     return true;
   }
   return false;
@@ -43,8 +44,18 @@ const isNameValid = (name) => {
 const isEmailValid = (email) => {
   // Verifie si l'email est valide
   const regex =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5}))$/;
   if (regex.test(email)) {
+    return true;
+  }
+  return false;
+};
+// Vérification de la date 
+const isDateValide = (date) => {
+  // Verifie si l'email est valide
+  const regex =
+  /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/
+  if (regex.test(date)) {
     return true;
   }
   return false;
@@ -126,12 +137,12 @@ const ValidateForm = (e) => {
       "Veuillez accepter les conditions générales d'utilisation"
     );
     const checkBirthDate = displayError(
-      birthdate !== "",
+      birthdate !== "" && isDateValide(birthdate),
       document.getElementById("birthdate"),
       "Veuillez choisir une date de naissance"
     );
     const checkQuantity = displayError(
-      quantity !== "",
+      quantity !== "" && quantity >= 0 ,
       document.getElementById("quantity"),
       "Veuillez choisir une quantité"
     );
